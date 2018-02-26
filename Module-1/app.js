@@ -10,7 +10,6 @@ function LunchCheckController($scope) {
 
   $scope.checkCount = function () {
     if (!$scope.dishes || $scope.dishes.length == 0){
-      $scope.dishes = "Please enter data first";
       var count = 0;
     } else {
     count = ($scope.dishes.match(/,/g) || []).length
@@ -20,8 +19,8 @@ function LunchCheckController($scope) {
     $scope.getMessage = function (){
       if (count > 3) {
         return "Too much!";
-      } if ($scope.dishes == "Please enter data first" || count == 0) {
-        return "";
+      } if (count == 0) {
+        return "Please enter data first";
       } else {
         return "Enjoy!";
       }
