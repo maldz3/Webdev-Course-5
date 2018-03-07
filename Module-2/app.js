@@ -35,7 +35,11 @@
   function ShoppingListCheckOffService(){
     var service = this;
 
-    var toBuy = ['10 cookies', 'milk', 'eggs', 'bread', 'cheese'];
+    var toBuy = [ {name: "cookies", quantity: 10},
+                  {name: "drinks", quantity: 3},
+                  {name: "eggs", quantity: 12},
+                  {name: "cheese", quantity: 1},
+                  {name: "chocolates", quantity: 5} ];
     var bought = [];
 
     service.removeItem = function (itemIndex) {
