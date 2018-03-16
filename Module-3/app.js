@@ -19,12 +19,12 @@ MenuSearchService.$inject = ['MenuSearchService']
 function NarrowItDownController(MenuSearchService) {
   var narrower = this;
 
-  narrower.logMenuItems = function (searchTerm) {
+  narrower.found = function (searchTerm) {
     var promise = MenuSearchService.getMatchedMenuItems(searchTerm);
 
     promise.then(function(response) {
-      narrower.items = response.data;
-      console.log(narrower.items);
+      narrower.items = response;
+      // console.log(narrower.items);
     })
     .catch(function(error) {
       console.log("Error!");
@@ -52,7 +52,6 @@ function MenuSearchService($http, ApiBasePath) {
 
       };
 
-      console.log(foundItems);
       return foundItems;
     });
 

@@ -9,6 +9,25 @@ input[type="text"] {
   float: left;
   margin-left: 10px;
 }
+table {
+  margin-top: 20px;
+  float: left;
+}
+table, td {
+  padding: 5px;
+  border: 1px solid grey;
+  border-collapse: collapse;
+}
+table tr:nth-child(odd) {
+  background-color: #f1f1f1;
+}
+table tr:nth-child(even) {
+  background-color: #ffffff;
+}
+td {
+  padding: 6px;
+}
+
 .loader {
   display: none;
   margin-left: 5px;
