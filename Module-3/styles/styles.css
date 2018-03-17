@@ -9,6 +9,12 @@ input[type="text"] {
   float: left;
   margin-left: 10px;
 }
+#remove {
+  color: magenta;
+}
+#heading {
+  background-color: lightblue;
+}
 table {
   margin-top: 20px;
   float: left;
