@@ -53,6 +53,11 @@ function MenuSearchService($http, ApiBasePath) {
 
       for (var i = 0; i < items.length; i++) {
         var description = JSON.stringify(items[i].description);
+
+        if (searchTerm == "" || searchTerm == null) {
+          return foundItems;
+        };
+        
         if (description.toLowerCase().includes(searchTerm.toLowerCase())){
           foundItems.push(items[i]);
         };

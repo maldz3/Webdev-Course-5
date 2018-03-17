@@ -11,13 +11,14 @@ input[type="text"] {
 }
 #remove {
   color: magenta;
+  border-radius: 3px;
 }
 #heading {
   background-color: lightblue;
 }
 table {
   margin-top: 20px;
-  
+
 }
 table, td, th {
   padding: 5px;
