@@ -1,4 +1,5 @@
 <div class="table">
+  <h3 ng-show="narrower.items.length < 1">Nothing found</h3>
   <table ng-show="narrower.items.length > 0">
     <tr id="heading">
       <th>Name</th>
@@ -9,7 +10,7 @@
       <td>{{ item.name }}</td>
       <td>{{ item.short_name }}</td>
       <td>{{ item.description }}</td>
-      <td><button type="button" id="remove" ng-click="narrower.removeItem($index);">Don't want this one!</button></td>
+      <td id="remove"><button type="button" ng-click="narrower.removeItem($index);">Don't want this one!</button></td>
     </tr>
   </table>
 </div>
