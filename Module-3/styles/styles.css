@@ -13,10 +13,14 @@ table {
   margin-top: 20px;
   float: left;
 }
-table, td {
+table, td, th {
   padding: 5px;
   border: 1px solid grey;
   border-collapse: collapse;
+}
+th {
+  text-align: center;
+  font-size: 18px;
 }
 table tr:nth-child(odd) {
   background-color: #f1f1f1;
