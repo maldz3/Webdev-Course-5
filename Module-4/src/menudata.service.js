@@ -1,8 +1,8 @@
-(function(){
+(function () {
 'use strict';
 
 angular.module('data')
-.service('MenuDataService', MenuDataService),
+.service('MenuDataService', MenuDataService)
 .constant('ApiBasePath', " https://davids-restaurant.herokuapp.com");
 
 MenuDataService.$inject = ['$http', 'ApiBasePath'];
@@ -13,6 +13,9 @@ function MenuDataService($http, ApiBasePath) {
     return $http({
       method: "GET",
       url: (ApiBasePath + "/categories.json")
+    })
+    .catch(function () {
+      console.log("Something went wrong")
     });
   };
 
@@ -23,7 +26,12 @@ function MenuDataService($http, ApiBasePath) {
       params: {
         category: categoryShortName
       }
+    })
+    .catch(function () {
+      console.log("Something went wrong")
     });
+    console.log('respose is ' + response)
   };
+}
 
 })();

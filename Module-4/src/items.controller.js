@@ -5,10 +5,20 @@ angular.module('MenuApp')
 .controller('MenuItemsController', MenuItemsController);
 
 
-MenuItemsController.$inject = ['MenuDataService', 'items'];
-function MenuItemsController(MenuDataService, items) {
+MenuItemsController.$inject = ['$stateParams', 'MenuDataService'];
+function MenuItemsController($stateParams, MenuDataService) {
   var items = this;
-  categories.items = items;
+
+  var promise = MenuDataService.getItemsForCategory('categoryShortName');
+
+  promise.then(function (response) {
+    items.items = response.data;
+    console.log(response.data);
+  })
+  .catch(function () {
+    console.log("Something went terribly wrong.");
+  });
+
 }
 
 })();
